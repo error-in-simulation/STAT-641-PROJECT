@@ -74,7 +74,7 @@ def test_train_split():
     img_path ='C:/Users/Daniel/stat-641/face-mask-detection/images'
     img_path =  os.listdir(img_path)
     for img in img_path:
-        splits.append(os.path.join('/content/STAT-641-PROJECT/face-mask-detection/images', img)) # google colab
+        splits.append(os.path.join('/content/STAT-641-PROJECT/face-mask-detection/images', img).replace("\\","/")) # google colab
 
     np.random.shuffle(splits)
 
@@ -110,6 +110,6 @@ def data_process():
 #print(labels_dir)
 #print(os.path.exists('C:/Users/Daniel/stat-641/face-mask-detection/images'))
 
-print(os.path.exists(data_path))
-print(data_path)
+#print(os.path.exists(data_path))
+#print(data_path)
 data_process()
