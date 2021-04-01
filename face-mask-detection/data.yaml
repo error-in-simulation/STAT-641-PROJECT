@@ -1,6 +1,6 @@
   
 train: ../STAT-641-PROJECT/face-mask-detection/train.txt
-val: ../STAT-641-PROJECT/face-mask-detection/validate.txt
+val: ../STAT-641-PROJECT/face-mask-detection/valid.txt
 test: ../STAT-641-PROJECT/face-mask-detection/test.txt
 
 
