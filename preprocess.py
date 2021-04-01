@@ -1,3 +1,10 @@
+'''
+THIS DATA PROCESS FILE IS FOR STAT-641 W2021 FINAL PROJECT
+
+Author: Daniel Yang
+'''
+
+
 #excuse the lack of PEP-8
 
 from bs4 import BeautifulSoup
@@ -97,9 +104,12 @@ def data_process():
     for file in label_dir:
         xml_to_txt(file)
 
+# a bunch of random checks go down here        
+
 #labels_dir = list(sorted(glob("C:/Users/Daniel/stat-641/face-mask-detection/annotations/*.xml")))
 #print(labels_dir)
 #print(os.path.exists('C:/Users/Daniel/stat-641/face-mask-detection/images'))
+
 print(os.path.exists(data_path))
 print(data_path)
 data_process()

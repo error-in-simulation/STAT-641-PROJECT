@@ -1,0 +1,10 @@
+  
+train: ../stat-641/face-mask-detection/train.txt
+val: ../stat-641/face-mask-detection/validate.txt
+test: ../stat-641/face-mask-detection/test.txt
+
+
+nc: 3
+
+
+names: ['0', '1', '2']
