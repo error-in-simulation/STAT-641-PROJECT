@@ -74,7 +74,7 @@ def test_train_split():
     img_path ='C:/Users/Daniel/stat-641/face-mask-detection/images'
     img_path =  os.listdir(img_path)
     for img in img_path:
-        splits.append(os.path.join('/content/stat-641/face-mask-detection/images', img)) # google colab
+        splits.append(os.path.join('/content/STAT-641-PROJECT/face-mask-detection/images', img)) # google colab
 
     np.random.shuffle(splits)
 
@@ -99,10 +99,10 @@ def test_train_split():
 
 
 def data_process():
-    #test_train_split() (already done)
-    label_dir = list(sorted(glob("C:/Users/Daniel/stat-641/face-mask-detection/annotations/*.xml")))
-    for file in label_dir:
-        xml_to_txt(file)
+    test_train_split() 
+    #label_dir = list(sorted(glob("C:/Users/Daniel/stat-641/face-mask-detection/annotations/*.xml")))
+    #for file in label_dir:
+    #    xml_to_txt(file)
 
 # a bunch of random checks go down here        
 
