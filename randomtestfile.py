@@ -1,25 +1,25 @@
 #DOESN'T WORK DON'T KNOW WHY
 
-import torch
+from glob import glob
+from torch.utils.data import Dataset, DataLoader
 import torchvision.transforms as transforms
-from torchvision.utils import save_image
-from CustomDataSet import FaceMaskData
-import matplotlib.pyplot as plt
+import torch
+from bs4 import BeautifulSoup
+import cv2
 import os
-import glob 
-my_transforms = transforms.Compose([
-    transforms.ToPILImage(),
-    transforms.RandomCrop((224,224)),
-    transforms.ColorJitter(brightness = 0.5),
-    transforms.RandomRotation(degrees = 45),
-    transforms.RandomHorizontalFlip(p = 0.5),
-    transforms.RandomGrayscale(p=0.2)
+from CustomDataSet import FaceMaskData 
+from torchvision.utils import save_image
 
-])
-#image_dir = list(sorted(glob('C:/Users/Daniel/stat-641/face-mask-detection/images/*.png')))
-dataset = FaceMaskData(csv_file = "csvlabels.csv", root_dir ='C:/Users/Daniel/stat-641/face-mask-detection/images', transform = my_transforms)
+imgs_dir = list(sorted(glob('C:/Users/Daniel/stat-641/face-mask-detection/images/*.png'))) #replace with any directory of your choosing
+dataset = FaceMaskData(csv_file = "csvlabels.csv", imgs = imgs_dir) #note that you need the csvlabels 
 
 #print(os.path.exists("C:/Users/Daniel/stat-641/face-mask-detection/images"))
+'''
+#You run this, your computer will be destroyed
+img_num = 0
+for _ in range(10):
+    for img, label in dataset:
+        save_image(img, 'img' + str(img_num)+'.png')
+        img_num += 1 
 
-
-print(dataset.__getitem__(1))
+'''
